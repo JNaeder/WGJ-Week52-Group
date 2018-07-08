@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fffb6f6929ef7142b9272aabab14344, type: 3}
+  m_Name: ShotGun
+  m_EditorClassIdentifier: 
+  gunName: ShotGun
+  fireRate: 3
+  damage: 10
+  bulletSpeed: 8
+  gunObject: {fileID: 1287777061408174, guid: c38ef1f46359caf4d9b651d03e2262ac, type: 2}
+  bullet: {fileID: 1625797016542038, guid: 2926cb7fe49e8004587a19f764483acf, type: 2}
+  isAutomatic: 0
+  numberOfBulletsPerShot: 1
