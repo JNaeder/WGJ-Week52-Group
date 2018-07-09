@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!114 &114031997153767730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!114 &114051181351362834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: -1
 --- !u!114 &114187940756915194
 MonoBehaviour:
   m_ObjectHideFlags: 1

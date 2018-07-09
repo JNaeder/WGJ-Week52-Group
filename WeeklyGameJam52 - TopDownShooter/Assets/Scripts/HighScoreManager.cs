@@ -77,7 +77,7 @@ public class HighScoreManager : MonoBehaviour {
     void FormatHighScores(string textStream) {
         string[] entries = textStream.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
         highscoresList = new Highscore[entries.Length];
-        for (int i = 0; i < entries.Length; i++) {
+        for (int i = 0; i < highscoreUserNames.Length; i++) {
             string[] entryInfo = entries[i].Split(new char[] { '|' });
             string username = entryInfo[0];
             int score = int.Parse(entryInfo[1]);

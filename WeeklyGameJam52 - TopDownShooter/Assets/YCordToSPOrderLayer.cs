@@ -7,6 +7,7 @@ public class YCordToSPOrderLayer : MonoBehaviour {
     SpriteRenderer sP;
 
     public bool liveUpdate;
+    public int offset;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,7 @@ public class YCordToSPOrderLayer : MonoBehaviour {
 
     void ConvertYCordToOrderLayer(float yCord) {
         int newYCord = -(Mathf.RoundToInt(yCord));
-        sP.sortingOrder = newYCord;
+        sP.sortingOrder = newYCord + offset;
 
 
     }
