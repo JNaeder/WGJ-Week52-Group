@@ -14,6 +14,7 @@ public class GuyController : MonoBehaviour {
 	public Text ammo1num, ammo2num, ammo3num, healthNum;
 	public Image[] ammoBGHighlight;
 
+	public GameObject crosshair;
 
 	int currentAmmoIndex;
 	public int[] ammoNum;
@@ -50,12 +51,15 @@ public class GuyController : MonoBehaviour {
 
     GameManager gM;
     Animator anim;
+	GameObject crossHairCursor;
 
     // Use this for initialization
     void Start () {
         cam = Camera.main;
         gM = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
+
+		crossHairCursor = Instantiate(crosshair, transform.position, Quaternion.identity) as GameObject;
 
 		currentAmmo = ammo[0];
 		UpdateAmmoHighlight(0);
@@ -69,13 +73,23 @@ public class GuyController : MonoBehaviour {
         Shooting();
         ChoosingWeapon();
 		UpdateUI();
-        Special();    
+        Special();
+		SetAimTarget();
 	}
 
     void FixedUpdate()
     {
         Movement();
     }
+
+
+	public void SetAimTarget(){
+		Cursor.visible = false;
+		Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
+        Vector3 lookPos = cam.ScreenToWorldPoint(mousePos);
+		crossHairCursor.transform.position = lookPos;
+
+	}
 
     void Special() {
         Mathf.Round(specialCap);
@@ -268,7 +282,8 @@ public class GuyController : MonoBehaviour {
     public void Death() {
         gM.SetHighScore();
         gM.ShowDeathScreen();
-        
+		Destroy(crossHairCursor);
+        Cursor.visible = true;
         Destroy(gameObject);
 
 

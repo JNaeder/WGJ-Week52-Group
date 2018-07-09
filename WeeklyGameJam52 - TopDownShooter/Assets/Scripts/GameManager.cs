@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour {
 
     public static int numberOfEnemiesLeft = 0;
     public static int score, highScore;
-    public Texture2D cursorImage;
 
     public GameObject deathScreen, highScroreScreen;
 
@@ -27,7 +26,6 @@ public class GameManager : MonoBehaviour {
         enemySpawns = FindObjectsOfType<EnemySpawn>();
         hSM = GetComponent<HighScoreManager>();
 
-       Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.Auto);
     }
 
     // Update is called once per frame
