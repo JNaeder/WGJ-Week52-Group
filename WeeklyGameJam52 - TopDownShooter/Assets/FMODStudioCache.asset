@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114777925614655302}
-  - {fileID: 114236162619975132}
+  - {fileID: 114843567058223000}
+  - {fileID: 114774021569142362}
   EditorEvents:
-  - {fileID: 114804065170860296}
-  - {fileID: 114749293215567220}
-  - {fileID: 114811324768135384}
-  MasterBankRef: {fileID: 114236162619975132}
-  StringsBankRef: {fileID: 114777925614655302}
-  stringsBankWriteTime: 636666891012397003
+  - {fileID: 114240893924177764}
+  - {fileID: 114073537538404824}
+  - {fileID: 114115394619613060}
+  MasterBankRef: {fileID: 114774021569142362}
+  StringsBankRef: {fileID: 114843567058223000}
+  stringsBankWriteTime: 636666920120000000
   cacheVersion: 2
 --- !u!114 &114037357326563182
 MonoBehaviour:
@@ -37,6 +37,92 @@ MonoBehaviour:
   guid: 8a6fbbe740cd7f4a9cba5e54f5f21df6
   Banks:
   - {fileID: 114257689110768072}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 12000
+--- !u!114 &114073537538404824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: 8a6fbbe740cd7f4a9cba5e54f5f21df6
+  Banks:
+  - {fileID: 114774021569142362}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 12000
+--- !u!114 &114115394619613060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Gun_Fire
+  guid: dd8963fbc9737e46aa961cef934fffea
+  Banks:
+  - {fileID: 114774021569142362}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 468
+--- !u!114 &114115575170966038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Gun_Fire
+  guid: dd8963fbc9737e46aa961cef934fffea
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 468
+--- !u!114 &114180782265567298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: 8a6fbbe740cd7f4a9cba5e54f5f21df6
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -63,6 +149,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1322304
   Exists: 1
+--- !u!114 &114240893924177764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Collect_Item
+  guid: 0758b181a018d94fbb4c07abf267f9ac
+  Banks:
+  - {fileID: 114774021569142362}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 298
 --- !u!114 &114257689110768072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +234,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 12000
+--- !u!114 &114774021569142362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/John/Documents/GitHub/WGJ-Week52-Group/FMOD SESSION/WGJ Week52 Fmod
+    Session/Build/Desktop/Master Bank.bank
+  lastModified: 636666920120000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1322336
+  Exists: 1
 --- !u!114 &114777925614655302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +316,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 468
+--- !u!114 &114827221745114526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Collect_Item
+  guid: 0758b181a018d94fbb4c07abf267f9ac
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 298
+--- !u!114 &114843567058223000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/John/Documents/GitHub/WGJ-Week52-Group/FMOD SESSION/WGJ Week52 Fmod
+    Session/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636666920120000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 810
+  Exists: 1
 --- !u!114 &114973834984340664
 MonoBehaviour:
   m_ObjectHideFlags: 0
