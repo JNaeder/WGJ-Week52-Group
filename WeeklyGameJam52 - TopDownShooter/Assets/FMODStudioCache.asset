@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114973834984340664}
-  - {fileID: 114257689110768072}
+  - {fileID: 114777925614655302}
+  - {fileID: 114236162619975132}
   EditorEvents:
-  - {fileID: 114037357326563182}
-  - {fileID: 114737037169994034}
-  - {fileID: 114994498954029996}
-  MasterBankRef: {fileID: 114257689110768072}
-  StringsBankRef: {fileID: 114973834984340664}
-  stringsBankWriteTime: 636666661616890233
+  - {fileID: 114804065170860296}
+  - {fileID: 114749293215567220}
+  - {fileID: 114811324768135384}
+  MasterBankRef: {fileID: 114236162619975132}
+  StringsBankRef: {fileID: 114777925614655302}
+  stringsBankWriteTime: 636666891012397003
   cacheVersion: 2
 --- !u!114 &114037357326563182
 MonoBehaviour:
@@ -44,6 +44,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 12000
+--- !u!114 &114236162619975132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\John\Documents\GitHub\WGJ-Week52-Group\FMOD SESSION\WGJ Week52 Fmod
+    Session\Build\Desktop\Master Bank.bank
+  lastModified: 636666891012327055
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1322304
+  Exists: 1
 --- !u!114 &114257689110768072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +97,91 @@ MonoBehaviour:
   guid: dd8963fbc9737e46aa961cef934fffea
   Banks:
   - {fileID: 114257689110768072}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 468
+--- !u!114 &114749293215567220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: 8a6fbbe740cd7f4a9cba5e54f5f21df6
+  Banks:
+  - {fileID: 114236162619975132}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 12000
+--- !u!114 &114777925614655302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\John\Documents\GitHub\WGJ-Week52-Group\FMOD SESSION\WGJ Week52 Fmod
+    Session\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636666891012397003
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 810
+  Exists: 1
+--- !u!114 &114804065170860296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Collect_Item
+  guid: 0758b181a018d94fbb4c07abf267f9ac
+  Banks:
+  - {fileID: 114236162619975132}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 298
+--- !u!114 &114811324768135384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Gun_Fire
+  guid: dd8963fbc9737e46aa961cef934fffea
+  Banks:
+  - {fileID: 114236162619975132}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

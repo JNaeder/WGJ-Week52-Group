@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:\Users\John\Documents\Game Stuff\WGJ Week 52 Music\FMOD SESSION\WGJ
+  sourceProjectPath: C:\Users\John\Documents\GitHub\WGJ-Week52-Group\FMOD SESSION\WGJ
     Week52 Fmod Session\WGJ Week52 Fmod Session.fspro
-  SourceProjectPathUnformatted: C:\Users\John\Documents\Game Stuff\WGJ Week 52 Music\FMOD
+  SourceProjectPathUnformatted: C:\Users\John\Documents\GitHub\WGJ-Week52-Group\FMOD
     SESSION\WGJ Week52 Fmod Session\WGJ Week52 Fmod Session.fspro
-  SourceBankPathUnformatted: C:\Users\John\Documents\Game Stuff\WGJ Week 52 Music\FMOD
+  SourceBankPathUnformatted: C:\Users\John\Documents\GitHub\WGJ-Week52-Group\FMOD
     SESSION\WGJ Week52 Fmod Session\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
@@ -60,5 +60,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: Master Bank
+  MasterBank: 
   Banks: []

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e5bfcf73-ce69-4071-af83-546b7f32e49e}">
+        <property name="assetPath">
+            <value>Bounce_1.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>96.052244897959184</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{5ed2fd62-e18a-4d62-a8c6-91ec10ffe675}</destination>
+        </relationship>
+    </object>
+</objects>
