@@ -43,3 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 465571945
+    locked: 0
+  - name: MiddleGround
+    uniqueID: 3436461443
+    locked: 0
+  - name: ForGround
+    uniqueID: 441994629
+    locked: 0
+  - name: UI
+    uniqueID: 2534636245
+    locked: 0

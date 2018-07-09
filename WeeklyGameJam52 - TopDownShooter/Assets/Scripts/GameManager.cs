@@ -16,14 +16,16 @@ public class GameManager : MonoBehaviour {
     public static int score, highScore;
     public Texture2D cursorImage;
 
-    public GameObject deathScreen;
+    public GameObject deathScreen, highScroreScreen;
 
     EnemySpawn[] enemySpawns;
+
+    HighScoreManager hSM;
 
     // Use this for initialization
     void Start() {
         enemySpawns = FindObjectsOfType<EnemySpawn>();
-
+        hSM = GetComponent<HighScoreManager>();
 
        Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.Auto);
     }
@@ -74,11 +76,29 @@ public class GameManager : MonoBehaviour {
         numberOfEnemiesLeft = 0;
     }
 
+    public void GoToHighScoreScreen() {
+        highScroreScreen.SetActive(true);
+        deathScreen.SetActive(false);
+
+    }
+
+    public void GoToDeathScreen() {
+        highScroreScreen.SetActive(false);
+        deathScreen.SetActive(true);
+
+    }
+
 
     public void ShowDeathScreen() {
         deathScreen.SetActive(true);
         finalScoreNum.text = score.ToString();
         highscoreNum.text = highScore.ToString();
+
+    }
+
+
+    public void SubmitHighScore() {
+        hSM.AddNewHighScore(score);
 
     }
 

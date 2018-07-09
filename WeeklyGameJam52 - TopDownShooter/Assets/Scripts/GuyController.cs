@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class GuyController : MonoBehaviour {
 	public int health = 5;
@@ -20,9 +21,8 @@ public class GuyController : MonoBehaviour {
 	Ammo currentAmmo;
 
     Camera cam;
-	public SpriteRenderer guySP;
+    public SpriteRenderer guySP, gunSP;
 	public Transform gunTrans;
-	public Sprite leftRightSprite, upDownSprite;
 
     public float specialCap, specialStartNum;
     float  specialBarPerc;
@@ -35,12 +35,27 @@ public class GuyController : MonoBehaviour {
     [Range(-10, 10)]
     public float angleAdjustment;
 
+    public float screenOffset;
+
+    [FMODUnity.EventRef]
+    public string gunFireSound;
+
+
+    float h;
+    float v;
+    float h_raw;
+    float v_raw;
+
+
+
     GameManager gM;
+    Animator anim;
 
     // Use this for initialization
     void Start () {
         cam = Camera.main;
         gM = FindObjectOfType<GameManager>();
+        anim = GetComponent<Animator>();
 
 		currentAmmo = ammo[0];
 		UpdateAmmoHighlight(0);
@@ -129,7 +144,7 @@ public class GuyController : MonoBehaviour {
 
 			    if (ammoNum[currentAmmoIndex] > 0)
                     {
-				
+                FMODUnity.RuntimeManager.PlayOneShot(gunFireSound); 
 				    GameObject bullet = Instantiate(ammo[currentAmmoIndex].bulletToSpawn , gunMuzzle.position, gunMuzzle.rotation);
                         Bullet bulletScript = bullet.GetComponent<Bullet>();
 				        bulletScript.SetDamage(ammo[currentAmmoIndex].damage, ammo[currentAmmoIndex].bulletSpeed);
@@ -137,35 +152,28 @@ public class GuyController : MonoBehaviour {
                     }
                 }
             }
-            
-   
+
+    void UpdateAnimator() {
+        anim.SetFloat("speed", Mathf.Clamp01(Mathf.Abs(h) + Mathf.Abs(v)));
+
+
+    }
 
 
     void Movement() {
 		//Move Player
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        float h_raw = Input.GetAxisRaw("Horizontal");
-        float v_raw = Input.GetAxisRaw("Vertical");
+        h = Input.GetAxis("Horizontal");
+        v = Input.GetAxis("Vertical");
+        h_raw = Input.GetAxisRaw("Horizontal");
+        v_raw = Input.GetAxisRaw("Vertical");
 
-       //Flip Sprites
+        UpdateAnimator();
+
+
         transform.position += new Vector3(h, v, 0) * Time.deltaTime * speed * (1/Time.timeScale);
-		if(h_raw < 0){
-			guySP.flipX = true;         
-		} else if(h_raw > 0) {
-			guySP.flipX = false;
-		}
-		if(v_raw != 0 && h_raw == 0){
-			guySP.sprite = upDownSprite;
-			if(v_raw < 0){
-				guySP.flipY = true;
-			} else {
-				guySP.flipY = false;
-			}
-		} else {
-			guySP.sprite = leftRightSprite;
 
-		}
+		
+		
 
 
 
@@ -178,13 +186,38 @@ public class GuyController : MonoBehaviour {
         gunTrans.rotation = Quaternion.Euler(0, 0, angle - 90f);
 
 
+        float xScreenLimit = Screen.width / 2;
+        float yScreenLimit = Screen.height / 3;
+
+        //Debug.Log(Input.mousePosition + " " + xScreenLimit + " " + yScreenLimit);
 
 
-		if(Input.mousePosition.x < (Screen.width/2)){
-			gunScale.x = -1;         
-		} else {
-			gunScale.x = 1;         
-		}
+		if(mousePos.x < xScreenLimit && mousePos.y > yScreenLimit + screenOffset && mousePos.y < Screen.height - yScreenLimit){
+            // Left
+			gunScale.x = -1;
+            gunSP.sortingOrder = 20;
+            anim.SetFloat("mouseX", -1);
+            anim.SetFloat("mouseY", 0);
+        } else if(mousePos.x > xScreenLimit && mousePos.y > yScreenLimit + screenOffset && mousePos.y < Screen.height - yScreenLimit) {
+            // Right
+			gunScale.x = 1;
+            gunSP.sortingOrder = 20;
+            anim.SetFloat("mouseX", 1);
+            anim.SetFloat("mouseY", 0);
+        } else if(mousePos.y < yScreenLimit + screenOffset)
+        {
+            // Down
+            
+            gunSP.sortingOrder = 20;
+            anim.SetFloat("mouseX", 0);
+            anim.SetFloat("mouseY", -1);
+        } else if(mousePos.y > Screen.height - yScreenLimit ) {
+            // Up
+            
+            gunSP.sortingOrder = -50;
+            anim.SetFloat("mouseX", 0);
+            anim.SetFloat("mouseY", 1);
+        }
 
 		gunTrans.localScale = gunScale;
 

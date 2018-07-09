@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Enemy : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class Enemy : MonoBehaviour {
 	public GameObject[] drops;
     public float dropRange;
     public int minDropNum, maxDropNum;
+
+    public GameObject damageVisual;
 
 
 	float healthPerc, startHealthNum;
@@ -50,11 +53,20 @@ public class Enemy : MonoBehaviour {
 
 	public void TakeDamage(float damage){
 		health -= damage;
+        ShowDamageVisual(damage);   
 		if(health <= 0){
 			Death();
 
 		}
 	}
+
+
+    void ShowDamageVisual(float damage) {
+        GameObject newDamageObject = Instantiate(damageVisual, transform.position, Quaternion.identity);
+        TextMeshPro newDamageText = newDamageObject.GetComponent<TextMeshPro>();
+        newDamageText.text = "-" + damage.ToString();
+
+    }
 
 
 	void Death()
