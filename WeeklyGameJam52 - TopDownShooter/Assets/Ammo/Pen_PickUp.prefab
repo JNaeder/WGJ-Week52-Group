@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadc12d285be6468db49c72b83ed76bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoIndex: 0
+  ammoIndex: 2
   pickUpSound: event:/Collect_Item
 --- !u!114 &114285102826942736
 MonoBehaviour:
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!212 &212123040622487352
 SpriteRenderer:
   m_ObjectHideFlags: 1

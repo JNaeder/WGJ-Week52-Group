@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1041557071080594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.18, y: -1.69, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!114 &114792671353821426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadc12d285be6468db49c72b83ed76bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoIndex: 1
+  ammoIndex: 4
   pickUpSound: event:/Collect_Item
 --- !u!212 &212301440173983048
 SpriteRenderer:
@@ -139,8 +140,8 @@ SpriteRenderer:
   m_SortingLayerID: -858505853
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2867587ec01b93841a7318af3bed7ce9, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ec30d8598a4784130bcd8c48ca984e31, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

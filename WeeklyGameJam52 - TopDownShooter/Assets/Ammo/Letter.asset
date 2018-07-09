@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b72bdfbb374d423488c0ba5451377ca, type: 3}
+  m_Name: Letter
+  m_EditorClassIdentifier: 
+  ammoName: Letter
+  damage: 1
+  knockbackTime: 0
+  knockbackPower: 0
+  bulletSpeed: 10
+  bulletToSpawn: {fileID: 1824211270900334, guid: 038328ffa012c4ca0b4181e6aff4934b,
+    type: 2}
+  UIIcon: {fileID: 21300000, guid: 48d3cc47d1ccb44db996c6aa5762b49b, type: 3}

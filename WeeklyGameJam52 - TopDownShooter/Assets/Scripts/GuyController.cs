@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
+using TMPro;
 
 public class GuyController : MonoBehaviour {
 	public int health = 5;
@@ -11,25 +12,19 @@ public class GuyController : MonoBehaviour {
 	public Transform gun;
     public Transform gunMuzzle;
 
-	public Text ammo1num, ammo2num, ammo3num, healthNum;
-	public Image[] ammoBGHighlight;
+	public TextMeshProUGUI currentAmmoNum;
+	public Image ammoImage, mainPlayerUI;
+	public Sprite[] guyHealthImage;
 
 	public GameObject crosshair;
 
 	int currentAmmoIndex;
 	public int[] ammoNum;
 
-	Ammo currentAmmo;
 
     Camera cam;
     public SpriteRenderer guySP, gunSP;
 	public Transform gunTrans;
-
-    public float specialCap, specialStartNum;
-    float  specialBarPerc;
-    public Image specialBarFront, specialReaduButton;
-    public  bool isSpecialTime;
-    public float slowDownTime;
 
     [Range(80, 100)]
     public float angleCorrection;
@@ -41,16 +36,15 @@ public class GuyController : MonoBehaviour {
     [FMODUnity.EventRef]
     public string gunFireSound;
 
+	public Animator canvasAnim;
 
     float h;
     float v;
-    float h_raw;
-    float v_raw;
 
 
 
     GameManager gM;
-    Animator anim;
+	Animator anim;
 	GameObject crossHairCursor;
 
     // Use this for initialization
@@ -61,10 +55,6 @@ public class GuyController : MonoBehaviour {
 
 		crossHairCursor = Instantiate(crosshair, transform.position, Quaternion.identity) as GameObject;
 
-		currentAmmo = ammo[0];
-		UpdateAmmoHighlight(0);
-        specialStartNum = specialCap;
-        specialCap = 0;
 	}
 	
 	// Update is called once per frame
@@ -73,7 +63,6 @@ public class GuyController : MonoBehaviour {
         Shooting();
         ChoosingWeapon();
 		UpdateUI();
-        Special();
 		SetAimTarget();
 	}
 
@@ -91,55 +80,16 @@ public class GuyController : MonoBehaviour {
 
 	}
 
-    void Special() {
-        Mathf.Round(specialCap);
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            if (!isSpecialTime)
-            {
-                Debug.Log("Special!");
-                isSpecialTime = true;
-            }
-
-        }
-
-
-        if (isSpecialTime) {
-            if (specialCap > 0)
-            {
-                specialCap -= Time.deltaTime;
-
-
-                Time.timeScale = 1 / slowDownTime;
-            }
-            else {
-                Time.timeScale = 1;
-                isSpecialTime = false;
-
-            }
-
-        }
-    }
-
 
     void ChoosingWeapon() {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-			currentAmmoIndex = 0;
-			UpdateAmmoHighlight(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) {
 
-			currentAmmoIndex = 1;
-			UpdateAmmoHighlight(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
+		if(Input.GetKeyDown(KeyCode.Tab)){
+			currentAmmoIndex++;
+			if(currentAmmoIndex >= ammo.Length){
+				currentAmmoIndex = 0;
+			}
 
-			currentAmmoIndex = 2;
-			UpdateAmmoHighlight(2);
-        }
-
-
+		}      
     }
 
 
@@ -161,7 +111,7 @@ public class GuyController : MonoBehaviour {
                 FMODUnity.RuntimeManager.PlayOneShot(gunFireSound); 
 				    GameObject bullet = Instantiate(ammo[currentAmmoIndex].bulletToSpawn , gunMuzzle.position, gunMuzzle.rotation);
                         Bullet bulletScript = bullet.GetComponent<Bullet>();
-				        bulletScript.SetDamage(ammo[currentAmmoIndex].damage, ammo[currentAmmoIndex].bulletSpeed);
+				bulletScript.SetDamage(ammo[currentAmmoIndex].damage, ammo[currentAmmoIndex].bulletSpeed, ammo[currentAmmoIndex].knockbackTime, ammo[currentAmmoIndex].knockbackPower);
 				ammoNum[currentAmmoIndex]--;
                     }
                 }
@@ -178,8 +128,6 @@ public class GuyController : MonoBehaviour {
 		//Move Player
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
-        h_raw = Input.GetAxisRaw("Horizontal");
-        v_raw = Input.GetAxisRaw("Vertical");
 
         UpdateAnimator();
 
@@ -239,39 +187,17 @@ public class GuyController : MonoBehaviour {
 
 
 	void UpdateUI(){
-		ammo1num.text = ammoNum[0].ToString();
-		ammo2num.text = ammoNum[1].ToString();
-		ammo3num.text = ammoNum[2].ToString();
-
-        healthNum.text = health.ToString();
-
-        if (Mathf.Round(specialCap) <= specialStartNum)
-        {
-            specialBarPerc = specialCap / specialStartNum;
-            Vector3 barScale = specialBarFront.transform.localScale;
-            barScale.y = specialBarPerc;
-            specialBarFront.transform.localScale = barScale;
-        }
-        if (Mathf.Round(specialCap) >= specialStartNum)
-        {
-            specialReaduButton.color = Color.red;
-        }
-        else {
-            specialReaduButton.color = Color.grey;
-        }
+		currentAmmoNum.text = ammoNum[currentAmmoIndex].ToString();
+		ammoImage.sprite = ammo[currentAmmoIndex].UIIcon;
+		mainPlayerUI.sprite = guyHealthImage[health];
+        
 
 	}
 
-	void UpdateAmmoHighlight(int ammoIndex){
-		for (int i = 0; i < ammoBGHighlight.Length; i++){
-			ammoBGHighlight[i].gameObject.SetActive(false);
-		}
 
-		ammoBGHighlight[ammoIndex].gameObject.SetActive(true);
-
-	}
 
 	public void TakeDamage(float newDamage){
+		canvasAnim.Play("Canvas_GetHit");
 		health -= (int)newDamage;
         if (health <= 0) {
             Death();

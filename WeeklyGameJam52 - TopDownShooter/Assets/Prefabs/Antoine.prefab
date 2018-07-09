@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055642752061536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 8.6, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4092851078105282}
@@ -236,36 +236,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50762cf8ba4c5445b202e2778259822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   speed: 7
   ammo:
+  - {fileID: 11400000, guid: 3a792cd200e8b4489949a4638e378d7b, type: 2}
+  - {fileID: 11400000, guid: cc3f0cbc1747c44e69436550c741967d, type: 2}
   - {fileID: 11400000, guid: 849e642903e024681b86f7db5893af53, type: 2}
+  - {fileID: 11400000, guid: 16854f23bfd374e2788165b7c6c9b347, type: 2}
   - {fileID: 11400000, guid: 1cd2b338799184b0aa5fd765b740f581, type: 2}
-  - {fileID: 11400000, guid: 5b0487e1d352c45a2a6d998a3494f667, type: 2}
   gun: {fileID: 4557784551299606}
   gunMuzzle: {fileID: 4025073443083270}
-  ammo1num: {fileID: 0}
-  ammo2num: {fileID: 0}
-  ammo3num: {fileID: 0}
-  healthNum: {fileID: 0}
-  ammoBGHighlight:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ammoNum: 320000003200000032000000
+  currentAmmoNum: {fileID: 0}
+  ammoImage: {fileID: 0}
+  mainPlayerUI: {fileID: 0}
+  guyHealthImage:
+  - {fileID: 21300000, guid: 77852e7cabf5b41b5bdac4c0a60a5cd5, type: 3}
+  - {fileID: 21300000, guid: 6ea471709f6994f0db3d2a0af4d7596d, type: 3}
+  - {fileID: 21300000, guid: c983067328e684acfb5f921a972821a4, type: 3}
+  - {fileID: 21300000, guid: 75b5610ee17a14f1ab6e833b70f63f7c, type: 3}
+  crosshair: {fileID: 1488290310089564, guid: 76d3142ddbe0e46ab8cadeff3068a95a, type: 2}
+  ammoNum: 3200000032000000320000003200000032000000
   guySP: {fileID: 212272662163691626}
   gunSP: {fileID: 212130641629471596}
   gunTrans: {fileID: 4557784551299606}
-  specialCap: 5
-  specialStartNum: 0
-  specialBarFront: {fileID: 0}
-  specialReaduButton: {fileID: 0}
-  isSpecialTime: 0
-  slowDownTime: 2
   angleCorrection: 90
   angleAdjustment: 0
   screenOffset: 82
   gunFireSound: event:/Gun_Fire
+  canvasAnim: {fileID: 0}
 --- !u!114 &114575035214508728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 1
+  offset: 0
 --- !u!212 &212130641629471596
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -355,8 +354,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -858505853
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b000bcd7bd38e2a4187b9801ea6b9687, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

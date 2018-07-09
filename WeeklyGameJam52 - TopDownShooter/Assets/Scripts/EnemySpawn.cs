@@ -12,7 +12,10 @@ public class EnemySpawn : MonoBehaviour {
 
 
 	public void SpawnNextEnemy(){
-		Instantiate(enemies[0], spawnPoint.position, spawnPoint.rotation);
+
+		int randomNum = Random.Range(0, enemies.Length);
+
+		Instantiate(enemies[randomNum], spawnPoint.position, spawnPoint.rotation);
 
 
 	}

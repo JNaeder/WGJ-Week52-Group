@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 
     public int wave;
 
-    public Text scoreNum, waveNum, highscoreNum, finalScoreNum;
+	public TextMeshProUGUI scoreNum, waveNum;
+	public Text highscoreNum, finalScoreNum;
 
     int numberOfEnemies;
 
@@ -18,21 +20,22 @@ public class GameManager : MonoBehaviour {
     public GameObject deathScreen, highScroreScreen;
 
     EnemySpawn[] enemySpawns;
+	CameraBossManager camManager;
 
     HighScoreManager hSM;
 
     // Use this for initialization
     void Start() {
         enemySpawns = FindObjectsOfType<EnemySpawn>();
+		camManager = FindObjectOfType<CameraBossManager>();
         hSM = GetComponent<HighScoreManager>();
-
+		numberOfEnemiesLeft = 0;
     }
 
     // Update is called once per frame
     void Update() {
         scoreNum.text = score.ToString();
         waveNum.text = wave.ToString();
-
         if (numberOfEnemiesLeft <= 0) {
             NewWave();
 
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour {
     void NewWave() {
         wave++;
         numberOfEnemies = wave * 2;
+		camManager.ActivateCameras();
         StartCoroutine(SpawnEnemies());
     }
 
@@ -60,7 +64,6 @@ public class GameManager : MonoBehaviour {
     public void SetHighScore() {
         if (score > highScore) {
             highScore = score;
-            Debug.Log("New HighScore: " + highScore);
         }
 
 

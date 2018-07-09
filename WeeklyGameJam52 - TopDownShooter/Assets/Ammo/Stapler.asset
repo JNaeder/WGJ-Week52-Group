@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoName: Stapler
   damage: 5
-  bulletSpeed: 8
+  knockbackTime: 2
+  knockbackPower: 2
+  bulletSpeed: 10
   bulletToSpawn: {fileID: 1507835990372808, guid: f6eaf709fbf8c4bb49310131da7ccebe,
     type: 2}
+  UIIcon: {fileID: 21300000, guid: 2275d9653c26643d69ee0f894ad2a1e2, type: 3}

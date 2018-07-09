@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoName: Pen
   damage: 1
+  knockbackTime: 0
+  knockbackPower: 0
   bulletSpeed: 10
   bulletToSpawn: {fileID: 1249797651321660, guid: ad11a434639924c239678f91c7fe7114,
     type: 2}
+  UIIcon: {fileID: 21300000, guid: bb0c1f5089a5b4f208ab97b5d1d0f034, type: 3}

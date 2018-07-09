@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212289992633199646}
   - component: {fileID: 114774213993591986}
   - component: {fileID: 60173014137305494}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Snack_Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!212 &212289992633199646
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212220395265249210}
   - component: {fileID: 114954718181457644}
   - component: {fileID: 60426474638274028}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cubicle_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!212 &212220395265249210
 SpriteRenderer:
   m_ObjectHideFlags: 1

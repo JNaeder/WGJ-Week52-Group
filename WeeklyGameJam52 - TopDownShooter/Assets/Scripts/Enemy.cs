@@ -15,12 +15,15 @@ public class Enemy : MonoBehaviour {
     public int minDropNum, maxDropNum;
 
     public GameObject damageVisual;
+	Canvas can;
 
-
+	float knockbackTime;
 	float healthPerc, startHealthNum;
 
 	Transform target;
-    GuyController guy;
+	[HideInInspector]
+    public GuyController guy;
+	Rigidbody2D rB;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +35,8 @@ public class Enemy : MonoBehaviour {
 
 		GameManager.numberOfEnemiesLeft++;
         guy = FindObjectOfType<GuyController>();
+		can = FindObjectOfType<Canvas>();
+		rB = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -39,6 +44,15 @@ public class Enemy : MonoBehaviour {
 		SetUpHealth();
 		FollowPlayer();
 
+
+        
+		if(knockbackTime < 0){
+			rB.velocity = Vector2.zero;
+
+		} else {
+			knockbackTime -= Time.deltaTime;
+            
+		}
 	}
 
 
@@ -51,20 +65,26 @@ public class Enemy : MonoBehaviour {
 	}
 
 
-	public void TakeDamage(float damage){
+	public  void TakeDamage(float damage, float newKnockbackTime, float newKnockbackPower){
 		health -= damage;
-        ShowDamageVisual(damage);   
-		if(health <= 0){
-			Death();
+        ShowDamageVisual(damage);
+		knockbackTime = newKnockbackTime;
 
+		Vector3 knockbackDir = guy.transform.position - transform.position;
+		knockbackDir.Normalize();
+		rB.AddForce(-knockbackDir * newKnockbackPower, ForceMode2D.Impulse);
+		if(health <= 0){
+			Death();         
 		}
 	}
 
 
     void ShowDamageVisual(float damage) {
         GameObject newDamageObject = Instantiate(damageVisual, transform.position, Quaternion.identity);
-        TextMeshPro newDamageText = newDamageObject.GetComponent<TextMeshPro>();
+		TextMeshProUGUI newDamageText = newDamageObject.GetComponent<TextMeshProUGUI>();
         newDamageText.text = "-" + damage.ToString();
+		newDamageText.transform.SetParent(can.transform, true);
+		newDamageText.transform.localScale = Vector3.one;
 
     }
 
@@ -75,10 +95,6 @@ public class Enemy : MonoBehaviour {
 		GameManager.score += points;
         DropItems();
         Destroy(gameObject);
-        if (Mathf.Round(guy.specialCap) < guy.specialStartNum && !guy.isSpecialTime)
-        {
-            guy.specialCap++;
-        }
 		
 	}
 

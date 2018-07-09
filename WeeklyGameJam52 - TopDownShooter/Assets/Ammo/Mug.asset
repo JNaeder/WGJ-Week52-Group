@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoName: Mug
   damage: 3
+  knockbackTime: 1
+  knockbackPower: 1
   bulletSpeed: 10
   bulletToSpawn: {fileID: 1683064861293710, guid: e1323c455eb504eeca2fa3b1ef8915dd,
     type: 2}
+  UIIcon: {fileID: 21300000, guid: 2a60ecee0776b4dceb27d7a3bfc686fa, type: 3}
