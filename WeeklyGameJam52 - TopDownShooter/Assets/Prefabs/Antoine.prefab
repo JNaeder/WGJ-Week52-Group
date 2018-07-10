@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055642752061536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 6, z: 0}
+  m_LocalPosition: {x: -15.9, y: 27.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4092851078105282}
@@ -251,7 +251,7 @@ MonoBehaviour:
   mainPlayerUI: {fileID: 0}
   guyHealthImage:
   - {fileID: 21300000, guid: 77852e7cabf5b41b5bdac4c0a60a5cd5, type: 3}
-  - {fileID: 21300000, guid: 6ea471709f6994f0db3d2a0af4d7596d, type: 3}
+  - {fileID: 21300000, guid: 08b31bdc653884186b42cd5f2a762559, type: 3}
   - {fileID: 21300000, guid: c983067328e684acfb5f921a972821a4, type: 3}
   - {fileID: 21300000, guid: 75b5610ee17a14f1ab6e833b70f63f7c, type: 3}
   crosshair: {fileID: 1488290310089564, guid: 76d3142ddbe0e46ab8cadeff3068a95a, type: 2}
@@ -262,7 +262,10 @@ MonoBehaviour:
   angleCorrection: 90
   angleAdjustment: 0
   screenOffset: 82
-  gunFireSound: event:/Gun_Fire
+  gunFireSound: event:/Interact/Shoot_Throw
+  shootNoAmmo: event:/Interact/Shoot_NoAmmo
+  changeWeapon: event:/Interact/ChangeWeapon
+  playerHit: event:/Player/Player_Hit
   canvasAnim: {fileID: 0}
 --- !u!114 &114575035214508728
 MonoBehaviour:

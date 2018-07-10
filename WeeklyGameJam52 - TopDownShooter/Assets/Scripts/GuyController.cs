@@ -40,7 +40,7 @@ public class GuyController : MonoBehaviour {
 
     float h;
     float v;
-
+	bool isThrowing;
 
 
     GameManager gM;
@@ -109,6 +109,7 @@ public class GuyController : MonoBehaviour {
 
             if (ammoNum[currentAmmoIndex] > 0)
             {
+				isThrowing = true;
                 FMODUnity.RuntimeManager.PlayOneShot(gunFireSound);
                 GameObject bullet = Instantiate(ammo[currentAmmoIndex].bulletToSpawn, gunMuzzle.position, gunMuzzle.rotation);
                 Bullet bulletScript = bullet.GetComponent<Bullet>();
@@ -119,11 +120,17 @@ public class GuyController : MonoBehaviour {
                 FMODUnity.RuntimeManager.PlayOneShot(shootNoAmmo);
             }
                 }
+
+
+		if(Input.GetButtonUp("Fire1")){
+			isThrowing = false;
+
+		}
             }
 
     void UpdateAnimator() {
         anim.SetFloat("speed", Mathf.Clamp01(Mathf.Abs(h) + Mathf.Abs(v)));
-
+		anim.SetBool("isThrowing", isThrowing);
 
     }
 

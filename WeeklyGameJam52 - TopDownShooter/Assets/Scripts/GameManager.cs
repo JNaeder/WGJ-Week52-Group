@@ -9,13 +9,17 @@ public class GameManager : MonoBehaviour {
 
     public int wave;
 
-	public TextMeshProUGUI scoreNum, waveNum;
+	public TextMeshProUGUI scoreNum, waveNum, nextWaveTimer;
 	public Text highscoreNum, finalScoreNum;
+	public GameObject nextWaveBubble;
 
     int numberOfEnemies;
+	public float timeToNextWave;
+	public bool newWaveStarted;
 
     public static int numberOfEnemiesLeft = 0;
     public static int score, highScore;
+	public float timeBetweenWaves;
 
     public GameObject deathScreen, highScroreScreen;
 
@@ -38,17 +42,52 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        scoreNum.text = score.ToString();
-        waveNum.text = wave.ToString();
-        if (numberOfEnemiesLeft <= 0) {
-            NewWave();
+		UpdateUI();
+		CheckIfNewWaveShouldStart();
+    }
 
+
+	void UpdateUI(){
+		scoreNum.text = score.ToString();
+        waveNum.text = wave.ToString();      
+        if (timeToNextWave > 0)
+        {
+            nextWaveTimer.enabled = true;
+			nextWaveBubble.SetActive(true);
+            nextWaveTimer.text = timeToNextWave.ToString("F0");         
+        }
+        else
+        {
+			nextWaveBubble.SetActive(false);
+            nextWaveTimer.enabled = false;         
+        }      
+        if (timeToNextWave > 0)
+        {
+            timeToNextWave -= Time.deltaTime;         
         }
     }
 
-    void NewWave() {
-        wave++;
-        numberOfEnemies = wave * 2;
+
+
+
+	void CheckIfNewWaveShouldStart(){
+		if (!newWaveStarted)
+        {
+            if (numberOfEnemiesLeft <= 0)
+            {
+                StartCoroutine("NewWave");
+
+            }
+        }      
+	}
+
+	IEnumerator NewWave() {
+		newWaveStarted = true;
+		timeToNextWave = timeBetweenWaves;
+		wave++;
+		camManager.DeActivateAllCams();
+		yield return new WaitForSeconds(timeBetweenWaves);
+        numberOfEnemies = wave + 2;
 		camManager.ActivateCameras();
         StartCoroutine(SpawnEnemies());
     }
@@ -60,7 +99,7 @@ public class GameManager : MonoBehaviour {
             enemySpawns[randomSpawnPos].SpawnNextEnemy();
             yield return new WaitForSeconds(1f);
         }
-
+		newWaveStarted = false;
         yield break;
     }
 
@@ -101,6 +140,17 @@ public class GameManager : MonoBehaviour {
         highscoreNum.text = highScore.ToString();
 
     }
+
+	public void PauseMenu(){
+
+
+	}
+
+	public void UnPauseMenu(){
+
+
+
+	}
 
 
     public void SubmitHighScore() {

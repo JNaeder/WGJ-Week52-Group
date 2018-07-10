@@ -8,11 +8,29 @@ public class Bullet : MonoBehaviour {
     float bulletSpeed;
 	float knockbackTime;
 	float knockbackPower;
-	
-	
+
+	public bool doesRotate;
+	public float rotSpeed;
+
+
+	Vector3 shootDirection;
+
+	private void Start()
+	{
+		shootDirection = transform.up;
+
+
+	}
+
+
 	void Update () {
 
-        transform.position += transform.up * Time.deltaTime * bulletSpeed;
+		transform.position += shootDirection * Time.deltaTime * bulletSpeed;
+
+		if(doesRotate){
+
+			transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * rotSpeed);
+		}
 
 
 	}

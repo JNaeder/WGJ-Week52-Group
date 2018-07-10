@@ -24,12 +24,14 @@ public class CameraBoss : MonoBehaviour {
 	GuyController guy;
 	Canvas can;
 	SpriteRenderer sP;
+	GameManager gM;
 
 	// Use this for initialization
 	void Start () {
 		guy = FindObjectOfType<GuyController>();
 		can = FindObjectOfType<Canvas>();
 		sP = GetComponentInChildren<SpriteRenderer>();
+		gM = FindObjectOfType<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -87,7 +89,7 @@ public class CameraBoss : MonoBehaviour {
     }
 
 
-	void Deactivate(){
+	public void Deactivate(){
 		isActive = false;
 		lineRend.enabled = false;
 		healthBar.SetActive(false);

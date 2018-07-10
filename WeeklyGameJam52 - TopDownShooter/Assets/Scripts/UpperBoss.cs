@@ -17,11 +17,14 @@ public class UpperBoss : MonoBehaviour {
 	public GameObject bullet;
 
 	Enemy enemy;
+	GameManager gM;
 
 	// Use this for initialization
 	void Start () {
 		enemy = GetComponent<Enemy>();
+		gM = FindObjectOfType<GameManager>();
 		enemyStartSpeed = enemy.speed;
+		numberOfBulletsInAttack = gM.wave * 2;
 		angleBetweenBullets = 360 / numberOfBulletsInAttack;
 	}
 	

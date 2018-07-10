@@ -18,4 +18,4 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletToSpawn: {fileID: 1507835990372808, guid: f6eaf709fbf8c4bb49310131da7ccebe,
     type: 2}
-  UIIcon: {fileID: 21300000, guid: 2275d9653c26643d69ee0f894ad2a1e2, type: 3}
+  UIIcon: {fileID: 21300000, guid: c0195663dc2524e3aa78bf5bba888bb0, type: 3}

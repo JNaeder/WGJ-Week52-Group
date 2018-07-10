@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 50584463517124472}
   - component: {fileID: 114906278138709656}
   - component: {fileID: 114183476601928348}
-  - component: {fileID: 95057896613663948}
   m_Layer: 8
   m_Name: Apple_Bullet
   m_TagString: Untagged
@@ -80,24 +79,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!95 &95057896613663948
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514853780083636}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38f86e79893a34cfca1ca9d99c50495a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114183476601928348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2494f1087c26f7346b433a6920c620b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doesRotate: 1
+  rotSpeed: 360
 --- !u!212 &212259222566180138
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -157,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: -858505853
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec30d8598a4784130bcd8c48ca984e31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c20f92e0830cc4b89859df86c447142e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
