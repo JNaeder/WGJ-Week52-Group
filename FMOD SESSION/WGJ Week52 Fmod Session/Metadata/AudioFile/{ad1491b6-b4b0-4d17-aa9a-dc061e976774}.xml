@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ad1491b6-b4b0-4d17-aa9a-dc061e976774}">
+        <property name="assetPath">
+            <value>SFX/ChangeWeapon.ogg</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.21426303854875284</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{5ed2fd62-e18a-4d62-a8c6-91ec10ffe675}</destination>
+        </relationship>
+    </object>
+</objects>

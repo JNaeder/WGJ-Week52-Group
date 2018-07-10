@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoIndex: 1
-  pickUpSound: event:/Collect_Item
+  pickUpSound: event:/Interact/Collect_Item
 --- !u!212 &212960807041674330
 SpriteRenderer:
   m_ObjectHideFlags: 1

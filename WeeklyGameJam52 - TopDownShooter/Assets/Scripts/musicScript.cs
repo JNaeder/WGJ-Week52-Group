@@ -12,6 +12,7 @@ public class musicScript : MonoBehaviour {
 
 	public static musicScript musicStatic;
 
+    GameManager gM;
 
 	private void Awake()
 	{
@@ -31,11 +32,20 @@ public class musicScript : MonoBehaviour {
 		musicInst = FMODUnity.RuntimeManager.CreateInstance(music);
 		musicInst.start();
 
+        gM = FindObjectOfType<GameManager>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        musicInst.setParameterValue("Wave", gM.wave);
+
 	}
+
+
+    public void SetGameManager(GameManager newGM) {
+        gM = newGM;
+
+    }
 }

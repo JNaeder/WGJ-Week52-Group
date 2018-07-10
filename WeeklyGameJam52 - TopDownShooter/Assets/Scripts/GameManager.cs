@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 	CameraBossManager camManager;
 
     HighScoreManager hSM;
+    musicScript musicScript;
 
     // Use this for initialization
     void Start() {
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviour {
 		camManager = FindObjectOfType<CameraBossManager>();
         hSM = GetComponent<HighScoreManager>();
 		numberOfEnemiesLeft = 0;
+
+        musicScript = FindObjectOfType<musicScript>();
+        musicScript.SetGameManager(this);
     }
 
     // Update is called once per frame
@@ -91,6 +95,7 @@ public class GameManager : MonoBehaviour {
 
 
     public void ShowDeathScreen() {
+        wave = 0;   
         deathScreen.SetActive(true);
         finalScoreNum.text = score.ToString();
         highscoreNum.text = highScore.ToString();

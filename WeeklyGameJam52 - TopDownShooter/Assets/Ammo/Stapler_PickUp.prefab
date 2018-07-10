@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoIndex: 2
-  pickUpSound: event:/Collect_Item
+  pickUpSound: event:/Interact/Collect_Item
 --- !u!114 &114892084935131866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveUpdate: 0
+  offset: 0
 --- !u!212 &212378348700808576
 SpriteRenderer:
   m_ObjectHideFlags: 1

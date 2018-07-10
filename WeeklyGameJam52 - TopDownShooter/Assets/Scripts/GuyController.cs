@@ -34,7 +34,7 @@ public class GuyController : MonoBehaviour {
     public float screenOffset;
 
     [FMODUnity.EventRef]
-    public string gunFireSound;
+    public string gunFireSound, shootNoAmmo, changeWeapon, playerHit;
 
 	public Animator canvasAnim;
 
@@ -83,7 +83,8 @@ public class GuyController : MonoBehaviour {
 
     void ChoosingWeapon() {
 
-		if(Input.GetKeyDown(KeyCode.Tab)){
+		if(Input.GetKeyDown(KeyCode.Space)){
+            FMODUnity.RuntimeManager.PlayOneShot(changeWeapon);
 			currentAmmoIndex++;
 			if(currentAmmoIndex >= ammo.Length){
 				currentAmmoIndex = 0;
@@ -106,14 +107,17 @@ public class GuyController : MonoBehaviour {
                 {
 
 
-			    if (ammoNum[currentAmmoIndex] > 0)
-                    {
-                FMODUnity.RuntimeManager.PlayOneShot(gunFireSound); 
-				    GameObject bullet = Instantiate(ammo[currentAmmoIndex].bulletToSpawn , gunMuzzle.position, gunMuzzle.rotation);
-                        Bullet bulletScript = bullet.GetComponent<Bullet>();
-				bulletScript.SetDamage(ammo[currentAmmoIndex].damage, ammo[currentAmmoIndex].bulletSpeed, ammo[currentAmmoIndex].knockbackTime, ammo[currentAmmoIndex].knockbackPower);
-				ammoNum[currentAmmoIndex]--;
-                    }
+            if (ammoNum[currentAmmoIndex] > 0)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(gunFireSound);
+                GameObject bullet = Instantiate(ammo[currentAmmoIndex].bulletToSpawn, gunMuzzle.position, gunMuzzle.rotation);
+                Bullet bulletScript = bullet.GetComponent<Bullet>();
+                bulletScript.SetDamage(ammo[currentAmmoIndex].damage, ammo[currentAmmoIndex].bulletSpeed, ammo[currentAmmoIndex].knockbackTime, ammo[currentAmmoIndex].knockbackPower);
+                ammoNum[currentAmmoIndex]--;
+            }
+            else {
+                FMODUnity.RuntimeManager.PlayOneShot(shootNoAmmo);
+            }
                 }
             }
 
@@ -197,6 +201,7 @@ public class GuyController : MonoBehaviour {
 
 
 	public void TakeDamage(float newDamage){
+        FMODUnity.RuntimeManager.PlayOneShot(playerHit);
 		canvasAnim.Play("Canvas_GetHit");
 		health -= (int)newDamage;
         if (health <= 0) {
@@ -210,6 +215,7 @@ public class GuyController : MonoBehaviour {
         gM.ShowDeathScreen();
 		Destroy(crossHairCursor);
         Cursor.visible = true;
+        mainPlayerUI.sprite = guyHealthImage[0];
         Destroy(gameObject);
 
 
