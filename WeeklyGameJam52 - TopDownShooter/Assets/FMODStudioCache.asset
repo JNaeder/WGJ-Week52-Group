@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114843567058223000}
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   EditorEvents:
   - {fileID: 114117631929626804}
   - {fileID: 114944908278009906}
@@ -38,9 +38,9 @@ MonoBehaviour:
   - {fileID: 114053251146711152}
   - {fileID: 114464486628120322}
   - {fileID: 114312246362826422}
-  MasterBankRef: {fileID: 114355796901850570}
+  MasterBankRef: {fileID: 114346862265112084}
   StringsBankRef: {fileID: 114843567058223000}
-  stringsBankWriteTime: 636668116870000000
+  stringsBankWriteTime: 636667756084699583
   cacheVersion: 2
 --- !u!114 &114013051565737376
 MonoBehaviour:
@@ -137,7 +137,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Die
   guid: f0ec721d03eb00408459b05201f62bf2
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -189,7 +189,7 @@ MonoBehaviour:
   Path: event:/Interact/Shoot_Throw
   guid: 5d47eb3348e41949b51905a877a14c64
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -277,7 +277,7 @@ MonoBehaviour:
   Path: event:/AmmoSounds/Letter
   guid: bb9133e53937c34ba4ead13e4c0b8d72
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -363,7 +363,7 @@ MonoBehaviour:
   Path: event:/Interact/Collect_Item
   guid: 0758b181a018d94fbb4c07abf267f9ac
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
   Path: event:/AmmoSounds/Mug
   guid: d7b740b93a55ee4fbfcc3f16fd3f47d2
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -555,7 +555,7 @@ MonoBehaviour:
   Path: event:/Bullet_Hit
   guid: 2d54fd206a8fde4cb315305d3bb74a46
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -599,7 +599,7 @@ MonoBehaviour:
   Path: event:/Enemies/HighBoss_Die
   guid: f06e6f5f9c55554084acbbadc9fb90c2
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -795,6 +795,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114304958212309064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wave
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114310726637162958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +845,7 @@ MonoBehaviour:
   Path: event:/Enemies/Camera_Shoot
   guid: fbd655b752e85f48afa752701e72b3d7
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -860,6 +875,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114346862265112084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\John\Documents\GitHub\WGJ-Week52-Group\FMOD SESSION\WGJ Week52 Fmod
+    Session\Build\Desktop\Master Bank.bank
+  lastModified: 636667756084659580
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3182816
+  Exists: 1
 --- !u!114 &114355796901850570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +927,7 @@ MonoBehaviour:
   Path: event:/Enemies/LowBoss_Die
   guid: 126992b7385cb749bfaa5046a91f9564
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -937,7 +971,7 @@ MonoBehaviour:
   Path: event:/Player/Player_Hit
   guid: 8f0f12a4c1d4504289933f9e21ce6489
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -981,7 +1015,7 @@ MonoBehaviour:
   Path: event:/Interact/ChangeWeapon
   guid: f4c7ccd3d542de4ebb0d6cb02f271f22
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1039,7 +1073,7 @@ MonoBehaviour:
   Path: event:/Music/Music
   guid: 8a6fbbe740cd7f4a9cba5e54f5f21df6
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1170,7 +1204,7 @@ MonoBehaviour:
   Path: event:/AmmoSounds/Stapler
   guid: 69d7d72608cf74469bee30a90a7e67e7
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1236,12 +1270,12 @@ MonoBehaviour:
   Path: event:/Music/Music_Parts
   guid: 3573635ec7d0f04ebddb3337087070de
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114754731235614424}
+  - {fileID: 114304958212309064}
   MinDistance: 0
   MaxDistance: 0
   Length: 59076
@@ -1280,7 +1314,7 @@ MonoBehaviour:
   Path: event:/Interact/PickUp
   guid: 5d478e9ab5b8544db76236a5080169f1
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1302,7 +1336,7 @@ MonoBehaviour:
   Path: event:/Enemies/HighBoss_Shoot
   guid: affafefcefbc9048bc29383224077817
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1448,7 +1482,7 @@ MonoBehaviour:
   Path: event:/Enemies/Camera_Deactivate
   guid: 4c504e5f4913e84988e529063bb73421
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1704,8 +1738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/John/Documents/GitHub/WGJ-Week52-Group/FMOD SESSION/WGJ Week52 Fmod
-    Session/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636668116870000000
+    Session\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636667756084699583
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1769,7 +1803,7 @@ MonoBehaviour:
   Path: event:/Interact/Gun_Fire
   guid: dd8963fbc9737e46aa961cef934fffea
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1864,7 +1898,7 @@ MonoBehaviour:
   Path: event:/AmmoSounds/ToiletPaper
   guid: 26e624eb32695144a24eb44cfa2f4445
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1886,7 +1920,7 @@ MonoBehaviour:
   Path: event:/AmmoSounds/Pen
   guid: dbe95486507e154da0ed476d03b07986
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1959,7 +1993,7 @@ MonoBehaviour:
   Path: event:/Interact/Shoot_NoAmmo
   guid: 0c06c52df2e272409d442cf350268148
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1981,7 +2015,7 @@ MonoBehaviour:
   Path: event:/Interact/Elevator_Open
   guid: f02b1da4d4ebfa4eb26534fddd0a325a
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2025,7 +2059,7 @@ MonoBehaviour:
   Path: event:/AmmoSounds/Apple
   guid: 4bc1886f56c56e45a4706b8e2289c598
   Banks:
-  - {fileID: 114355796901850570}
+  - {fileID: 114346862265112084}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

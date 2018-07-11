@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadc12d285be6468db49c72b83ed76bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoIndex: 2
+  ammoIndex: 5
   pickUpSound: event:/Interact/Collect_Item
 --- !u!114 &114892084935131866
 MonoBehaviour:
