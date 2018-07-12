@@ -296,6 +296,7 @@ MonoBehaviour:
   minDropNum: 3
   maxDropNum: 5
   smoke: {fileID: 1516323685433134, guid: dd4200fea025c4e8aa548f35d244eaa8, type: 2}
+  enemyDeathSound: event:/Enemies/LowBoss_Die
   damageVisual: {fileID: 1609815103084466, guid: 4d168996e39f045718bc154b4a0c49cd,
     type: 2}
   guy: {fileID: 0}

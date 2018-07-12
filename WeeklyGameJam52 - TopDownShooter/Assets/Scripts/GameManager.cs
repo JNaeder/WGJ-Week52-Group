@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour {
     public static int score, highScore;
 	public float timeBetweenWaves;
 
-    public GameObject deathScreen, highScroreScreen;
+    public GameObject deathScreen, highScroreScreen, pauseScreen, controlsScreen;
+
+    bool isPaused;
 
     EnemySpawn[] enemySpawns;
 	CameraBossManager camManager;
@@ -44,6 +46,21 @@ public class GameManager : MonoBehaviour {
     void Update() {
 		UpdateUI();
 		CheckIfNewWaveShouldStart();
+
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            isPaused = !isPaused;
+            if (isPaused)
+            {
+                PauseMenu();
+            }
+            else {
+                UnPauseMenu();
+
+            }
+
+        }
+
     }
 
 
@@ -142,15 +159,24 @@ public class GameManager : MonoBehaviour {
     }
 
 	public void PauseMenu(){
-
-
-	}
+        Time.timeScale = 0;
+        pauseScreen.SetActive(true);
+        controlsScreen.SetActive(false);
+    }
 
 	public void UnPauseMenu(){
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);
+        controlsScreen.SetActive(false);
+        isPaused = false;
 
+    }
 
+    public void ShowControlsScreen() {
+        pauseScreen.SetActive(false);
+        controlsScreen.SetActive(true);
 
-	}
+    }
 
 
     public void SubmitHighScore() {

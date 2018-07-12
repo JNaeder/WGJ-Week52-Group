@@ -19,6 +19,7 @@ public class HighScoreManager : MonoBehaviour {
     private void Awake()
     {
         DownloadHighScores();
+        //SetFakeHighScores();
     }
 
 
@@ -37,6 +38,20 @@ public class HighScoreManager : MonoBehaviour {
     public void DownloadHighScores() {
 
         StartCoroutine("DownloadHighScoresFromServer");
+
+    }
+
+    void SetFakeHighScores() {
+       StartCoroutine(UpLoadNewHighScore("Blank1", 500));
+        StartCoroutine(UpLoadNewHighScore("Blank2", 500));
+        StartCoroutine(UpLoadNewHighScore("Blank3", 500));
+        StartCoroutine(UpLoadNewHighScore("Blank4", 500));
+        StartCoroutine(UpLoadNewHighScore("Blank5", 500));
+        StartCoroutine(UpLoadNewHighScore("Blank6", 250));
+        StartCoroutine(UpLoadNewHighScore("Blank7", 250));
+        StartCoroutine(UpLoadNewHighScore("Blank8", 250));
+        StartCoroutine(UpLoadNewHighScore("Blank9", 250));
+        StartCoroutine(UpLoadNewHighScore("Blank10", 250));
 
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using FMODUnity;
 
 public class Enemy : MonoBehaviour {
 
@@ -14,6 +15,9 @@ public class Enemy : MonoBehaviour {
     public float dropRange;
     public int minDropNum, maxDropNum;
 	public GameObject smoke;
+
+    [FMODUnity.EventRef]
+    public string enemyDeathSound;
 
     public GameObject damageVisual;
 	Canvas can;
@@ -115,6 +119,7 @@ public class Enemy : MonoBehaviour {
         DropItems();
 		GameObject newSmoke = Instantiate(smoke, transform.position, Quaternion.identity);
 		Destroy(newSmoke, 1f);
+        FMODUnity.RuntimeManager.PlayOneShot(enemyDeathSound, transform.position);
 
         Destroy(gameObject);
 		
