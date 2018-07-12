@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PolyNav;
 
 [RequireComponent(typeof(Enemy))]
 public class UpperBoss : MonoBehaviour {
@@ -18,18 +19,26 @@ public class UpperBoss : MonoBehaviour {
 
 	Enemy enemy;
 	GameManager gM;
+	Animator anim;
+	PolyNavAgent polyAgent;
 
 	// Use this for initialization
 	void Start () {
 		enemy = GetComponent<Enemy>();
 		gM = FindObjectOfType<GameManager>();
-		enemyStartSpeed = enemy.speed;
+		anim = GetComponent<Animator>();
+		polyAgent = GetComponent<PolyNavAgent>();
+		enemyStartSpeed = polyAgent.maxSpeed;
 		numberOfBulletsInAttack = gM.wave * 2;
 		angleBetweenBullets = 360 / numberOfBulletsInAttack;
+
+		polyAgent.maxSpeed = enemyStartSpeed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		anim.SetBool("isAttacking", isAttacking);
+
 		GetDistance();
 		if (enemy.guy != null)
 		{
@@ -44,7 +53,8 @@ public class UpperBoss : MonoBehaviour {
 			}
 			else
 			{
-				enemy.speed = enemyStartSpeed;
+				polyAgent.maxSpeed = enemyStartSpeed;
+				//isAttacking = false;
 			}
 		}
 
@@ -64,7 +74,7 @@ public class UpperBoss : MonoBehaviour {
 
 	IEnumerator Attack1(){
 		isAttacking = true;
-		enemy.speed = 0;
+		polyAgent.maxSpeed = 0;
 		yield return new WaitForSeconds(1);
 			for (int i = 0; i < numberOfBulletsInAttack; i++){
 			GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, i * angleBetweenBullets)));

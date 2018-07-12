@@ -18,6 +18,7 @@ public class CameraBoss : MonoBehaviour {
 
 	public LineRenderer lineRend;
 	public GameObject damageVisual, healthBar;
+	public Sprite[] camSprites;
 
 	bool isAttacking, isActive;
 
@@ -93,13 +94,13 @@ public class CameraBoss : MonoBehaviour {
 		isActive = false;
 		lineRend.enabled = false;
 		healthBar.SetActive(false);
-		sP.color = Color.black;
+		sP.sprite = camSprites[1];
 	}
 
 	public void Activate(){
 		isActive = true;
 		healthBar.SetActive(true);
-		sP.color = Color.grey;
+		sP.sprite = camSprites[0];
 	}
     
 

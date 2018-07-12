@@ -38,8 +38,10 @@ public class musicScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        musicInst.setParameterValue("Wave", gM.wave);
+		if (gM != null)
+		{
+			musicInst.setParameterValue("Wave", gM.wave);
+		}
 
 	}
 

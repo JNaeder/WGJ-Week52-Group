@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212757731520365682}
   - component: {fileID: 114217356852452060}
   - component: {fileID: 61152156154816630}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Broom_bucket
   m_TagString: Untagged
   m_Icon: {fileID: 0}

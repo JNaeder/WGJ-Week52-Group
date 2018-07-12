@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < numberOfEnemies; i++) {
             int randomSpawnPos = Random.Range(0, enemySpawns.Length);
             enemySpawns[randomSpawnPos].SpawnNextEnemy();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
         }
 		newWaveStarted = false;
         yield break;
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour {
 
 
     public void ResetScene() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         score = 0;
         numberOfEnemiesLeft = 0;
     }

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4260624129029668}
   - component: {fileID: 212877243992614186}
   - component: {fileID: 114951107626587652}
-  - component: {fileID: 60531627118527730}
+  - component: {fileID: 61431486566262340}
   m_Layer: 12
   m_Name: Cubicle_2
   m_TagString: Untagged
@@ -35,15 +35,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904938063524896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 7.46, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.093473, y: 26.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60531627118527730
-PolygonCollider2D:
+--- !u!61 &61431486566262340
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -54,7 +54,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5706186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -64,21 +64,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.7777905, y: 1.6251392}
-      - {x: 0.19555798, y: 1.6459055}
-      - {x: -1.4148134, y: 1.6310921}
-      - {x: -2.96, y: 1.6251373}
-      - {x: -2.96, y: 0.056326866}
-      - {x: -0.98271585, y: -0.101551056}
-      - {x: -1.0033869, y: 0.3108816}
-      - {x: 2.153647, y: 0.40196514}
-      - {x: 2.1609337, y: -0.7212672}
-      - {x: 2.3868847, y: -0.72567844}
-      - {x: 2.6989584, y: -0.69410896}
-      - {x: 2.7506537, y: -2.9699206}
-      - {x: 3.0102296, y: -2.9500947}
+  serializedVersion: 2
+  m_Size: {x: 5.92, y: 2.464594}
+  m_EdgeRadius: 0
 --- !u!114 &114951107626587652
 MonoBehaviour:
   m_ObjectHideFlags: 1

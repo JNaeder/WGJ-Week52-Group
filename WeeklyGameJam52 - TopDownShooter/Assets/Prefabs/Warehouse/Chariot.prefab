@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212020014199140336}
   - component: {fileID: 114117218746738776}
   - component: {fileID: 61534662258235376}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Chariot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

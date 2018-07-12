@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212597054421483060}
   - component: {fileID: 114444971116415870}
   - component: {fileID: 61322584205876696}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TableWarehouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}

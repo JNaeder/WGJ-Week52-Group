@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4134551406803724}
   - component: {fileID: 212474619370139706}
   - component: {fileID: 114445934978124742}
-  - component: {fileID: 60423706070706990}
+  - component: {fileID: 50214318082358148}
   m_Layer: 12
   m_Name: Cubicle_1
   m_TagString: Untagged
@@ -35,49 +35,33 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1208658664814890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 7.46, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.8, y: 25.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60423706070706990
-PolygonCollider2D:
+--- !u!50 &50214318082358148
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1208658664814890}
-  m_Enabled: 1
-  m_Density: 1
+  m_BodyType: 0
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.92, y: 5.92}
-    newSize: {x: 1.48, y: 1.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.7777905, y: 1.6251392}
-      - {x: 0.19555798, y: 1.6459055}
-      - {x: -1.4148134, y: 1.6310921}
-      - {x: -2.96, y: 1.6251373}
-      - {x: -2.96, y: 0.056326866}
-      - {x: -0.98271585, y: -0.101551056}
-      - {x: -1.0033869, y: 0.3108816}
-      - {x: 2.153647, y: 0.40196514}
-      - {x: 2.2041225, y: -0.7295575}
-      - {x: 2.74758, y: -0.67479086}
-      - {x: 2.7419162, y: -2.9602456}
-      - {x: 2.9451888, y: -2.94}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &114445934978124742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: -858505853
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cae761903b0847045b54e763f4f41175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf6181d61f68caf4893af3ea65fd9244, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

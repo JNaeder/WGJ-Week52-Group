@@ -20,8 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4758021446404252}
   - component: {fileID: 212542038152256796}
-  - component: {fileID: 114191324096892640}
-  - component: {fileID: 60122457691146792}
+  - component: {fileID: 61456203257746620}
   m_Layer: 0
   m_Name: Meeting Table
   m_TagString: Untagged
@@ -35,15 +34,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710136425387838}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 35.67, y: 6.9, z: 0}
+  m_LocalScale: {x: 1, y: 1.60751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60122457691146792
-PolygonCollider2D:
+--- !u!61 &61456203257746620
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -64,26 +63,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.8641335, y: -0.7433289}
-      - {x: 0.8958672, y: -0.67986166}
-      - {x: 0.9117347, y: 0.8811935}
-      - {x: -0.8641334, y: 0.8494596}
-      - {x: -0.8482661, y: -0.7591959}
---- !u!114 &114191324096892640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1710136425387838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e69998e94e473fb43bf40ba538d8c1e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  liveUpdate: 0
-  offset: 0
+  serializedVersion: 2
+  m_Size: {x: 1.76, y: 2.25}
+  m_EdgeRadius: 0
 --- !u!212 &212542038152256796
 SpriteRenderer:
   m_ObjectHideFlags: 1

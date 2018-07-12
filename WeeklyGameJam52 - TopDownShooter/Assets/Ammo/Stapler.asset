@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Stapler
   m_EditorClassIdentifier: 
   ammoName: Stapler
-  damage: 5
+  damage: 4
   knockbackTime: 2
   knockbackPower: 2
   bulletSpeed: 10

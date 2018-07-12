@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject[] drops;
     public float dropRange;
     public int minDropNum, maxDropNum;
+	public GameObject smoke;
 
     public GameObject damageVisual;
 	Canvas can;
@@ -20,10 +21,13 @@ public class Enemy : MonoBehaviour {
 	float knockbackTime;
 	float healthPerc, startHealthNum;
 
+	Vector3 enemyDirection;
+
 	Transform target;
 	[HideInInspector]
     public GuyController guy;
 	Rigidbody2D rB;
+	Animator anim;
 
     // Use this for initialization
     void Start () {
@@ -37,13 +41,14 @@ public class Enemy : MonoBehaviour {
         guy = FindObjectOfType<GuyController>();
 		can = FindObjectOfType<Canvas>();
 		rB = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 		SetUpHealth();
 		FollowPlayer();
-
+		UpdateAnimator();
 
         
 		if(knockbackTime < 0){
@@ -53,6 +58,20 @@ public class Enemy : MonoBehaviour {
 			knockbackTime -= Time.deltaTime;
             
 		}
+	}
+
+    
+	void UpdateAnimator(){
+		if (guy != null)
+		{
+			enemyDirection = guy.transform.position - transform.position;
+
+			float h = enemyDirection.x;
+			float v = enemyDirection.y;
+			anim.SetFloat("h", h);
+			anim.SetFloat("v", v);
+		}
+
 	}
 
 
@@ -94,6 +113,9 @@ public class Enemy : MonoBehaviour {
 		GameManager.numberOfEnemiesLeft--;
 		GameManager.score += points;
         DropItems();
+		GameObject newSmoke = Instantiate(smoke, transform.position, Quaternion.identity);
+		Destroy(newSmoke, 1f);
+
         Destroy(gameObject);
 		
 	}

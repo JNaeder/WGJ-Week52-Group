@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212816742467185270}
   - component: {fileID: 114844925458843460}
   - component: {fileID: 61208798019403952}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BathRoomStalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.9345255}

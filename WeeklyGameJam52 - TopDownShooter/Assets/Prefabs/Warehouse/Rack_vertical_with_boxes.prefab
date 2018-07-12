@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212789825652462958}
   - component: {fileID: 114006442683220392}
   - component: {fileID: 61375325488747976}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Rack_vertical_with_boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75055647, y: 4.04}
+  m_Size: {x: 0.94, y: 4.04}
   m_EdgeRadius: 0
 --- !u!114 &114006442683220392
 MonoBehaviour:

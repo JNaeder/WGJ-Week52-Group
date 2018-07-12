@@ -208,6 +208,7 @@ public class GuyController : MonoBehaviour {
 
 
 	public void TakeDamage(float newDamage){
+		//anim.Play("GetHurt");
         FMODUnity.RuntimeManager.PlayOneShot(playerHit);
 		canvasAnim.Play("Canvas_GetHit");
 		health -= (int)newDamage;
